@@ -1,0 +1,12 @@
+name: holocaust_victims
+title: holocaust_victims
+username: samielsabri
+account: samielsabri
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11621021
+bundleId: 8433837
+url: https://samielsabri.shinyapps.io/holocaust_victims/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

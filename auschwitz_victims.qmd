@@ -1,0 +1,64 @@
+---
+title: "Echoes of the past: Memorializing and humanizing Auschwitz Victims through Data"
+author: 
+  - Sami El Sabri
+thanks: "Code and data are available at: https://github.com/samielsabri/auschwitz_victims, the interactive graphs and tables are available at: https://samielsabri.shinyapps.io/holocaust_victims/"
+date: today
+date-format: long
+format: pdf
+number-sections: true
+toc: TRUE
+bibliography: references.bib
+---
+\newpage
+
+# Introduction
+
+The Auschwitz concentration camp is probably one of the best documented instances of genocidal acts until today's current onslaught on Gaza. It was one of the main extermination camps established in occupied Poland by the Nazis during the Second World War. While the majority of its victims were Jewish, they hailed from different parts of the European continent. No matter their origin, they were completely stripped of their humanity throught the Nazi regimes atrocities.
+
+This project aims to memorialize the victims of the Holocaust by creating an interactive Shiny app that allows users to explore data on the victims based on their nationality. Utilizing datasets detailing the victims at Auschwitz concentration camp and using the open-source software R (@citeR), this work goes beyond mere numbers, emphasizing the stories and humanity of those who suffered and the diversity of the victims of the Holocaust. I hope this project can emphasize that we must do anything in our power for a 'Never again'. With the current dehumanization of Palestinians in the Gaza Strip and a plausible case for genocide in the Gaza strip while the world remains silent, similar to how the world was silent during the Holocaust, this reflection is now more important than ever. Every victim counts. Every victim is a human life with a human story.
+
+# Data
+
+This project uses a well-known dataset derived from the "Sterbebücher", German for "Death books", encompassing 46 volumes that record the deaths of prisoners registered in Auschwitz concentration camp from July 29, 1941, to December 31, 1943. This period marks a dark chapter in history, with the dataset documenting the execution of individuals by the Nazis.
+
+The fields in the dataset are as follows:
+
+Last.Name: The surname of the prisoner.
+First.Names.s.: The given name(s) of the prisoner.
+Date.of.Birth: The prisoner's birth date in YYYY-MM-DD format.
+Date.of.Death: The date the prisoner died, also in YYYY-MM-DD format.
+Birthplace: Where the prisoner was born.
+Residence: The prisoner's last known residence.
+Religion: The religious affiliation of the prisoner.
+
+Notably, this dataset only includes the victim's birthplace and not their nationality. However, by leveraging publically available datasets of cities and towns, I was able to match each victim to a country of origin. Of course, a birthplace is only a proxy for nationality, but it is the best approximation we have with the given data. The matching dataset was downloaded from the GeoNames geographical database (@citegeonames), includes only towns with more than 1000 inhabitants, and was filtered for only towns in Europe to avoid confusions such as Amsterdam, Netherlands or Amsterdam, United States. One limitation of this matching process is that there are still duplicate town names within Europe, so one cannot be entirely sure of someone's nationality, which is why I chose to allow multiple matching, increasing the original victims dataset from 65,000 to 70,000.
+
+The interactive visualization is made available through a shiny app accessible at https://samielsabri.shinyapps.io/holocaust_victims/
+
+
+
+# Discussion
+
+Jamelle Bouie's article, "The Stories That Data Sets Tell Us About History," underscores the importance of remembering the individuals behind historical data sets. This project, inspired by Bouie's insights, seeks to apply a similar perspective to the data on Holocaust victims.
+
+## Humanizing Data
+
+The Auschwitz victims' dataset is not just a collection of numbers; it represents individual lives—people with names, families, dreams, and stories tragically cut short. By presenting this data interactively, the project invites us to reflect on the human aspects behind the statistics. This person was born in Spain, how did they end up at Auschwitz? This other person is a Norwegian and just 10 years old, what happened in their life that was cut short until it was unjustifiably taken away?
+
+## Ethical Considerations
+
+Working with data on Holocaust victims carries a profound ethical responsibility. This project approaches the dataset with the utmost respect for the victims' dignity, aiming to honor their memory. Bouie (2022) discusses the ethical challenges of handling sensitive datasets, a theme deeply considered in this project's development. I noticed it myself, when I was cleaning the data and matching it to the countries, I tried to make sure that no name gets lost. The sensitive nature of the data led me to the decision that it is better to have duplicate names, rather than leaving a single victim out.
+
+## Awareness and Education
+
+The Shiny app developed in this project serves as an educational tool, promoting awareness about the Holocaust and the scale of its atrocities. Many people do not know that non-Jews, like Sinti and Roma, or political dissidents were killed. Many people do not know that the millions of Jews who were killed were from all corners of Europe, and had their own customs, languages, and cultures. It aligns with Bouie's call for using data to educate and remind us of our collective history, ensuring that the lessons of the past are not forgotten.
+
+
+# Conclusion
+
+This project illuminates the profound stories behind the Auschwitz victims' dataset, transforming abstract numbers into the narratives of individual lives lost. By leveraging data to visualize their origins and fates, we not only honor their memory but also underscore the timeless message that history's darkest chapters must never be repeated. In drawing parallels with current events in Palestine, Sudan, Myanmar, and the Congo, this work serves as a reminder of the ongoing relevance of the Holocaust's lessons in promoting human rights and dignity worldwide. Through this endeavor, we reaffirm our commitment to remembering the past and advocating for a just and compassionate future.
+
+\newpage
+
+# References
