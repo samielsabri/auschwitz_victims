@@ -24,13 +24,13 @@ This project uses a well-known dataset derived from the "Sterbebücher", German 
 
 The fields in the dataset are as follows:
 
-Last.Name: The surname of the prisoner.
-First.Names.s.: The given name(s) of the prisoner.
-Date.of.Birth: The prisoner's birth date in YYYY-MM-DD format.
-Date.of.Death: The date the prisoner died, also in YYYY-MM-DD format.
-Birthplace: Where the prisoner was born.
-Residence: The prisoner's last known residence.
-Religion: The religious affiliation of the prisoner.
+* Last.Name: The surname of the prisoner.
+* First.Names.s.: The given name(s) of the prisoner.
+* Date.of.Birth: The prisoner's birth date in YYYY-MM-DD format.
+* Date.of.Death: The date the prisoner died, also in YYYY-MM-DD format.
+* Birthplace: Where the prisoner was born.
+* Residence: The prisoner's last known residence.
+* Religion: The religious affiliation of the prisoner.
 
 Notably, this dataset only includes the victim's birthplace and not their nationality. However, by leveraging publically available datasets of cities and towns, I was able to match each victim to a country of origin. Of course, a birthplace is only a proxy for nationality, but it is the best approximation we have with the given data. The matching dataset was downloaded from the GeoNames geographical database (@citegeonames), includes only towns with more than 1000 inhabitants, and was filtered for only towns in Europe to avoid confusions such as Amsterdam, Netherlands or Amsterdam, United States. One limitation of this matching process is that there are still duplicate town names within Europe, so one cannot be entirely sure of someone's nationality, which is why I chose to allow multiple matching, increasing the original victims dataset from 65,000 to 70,000.
 
